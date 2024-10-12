@@ -1,0 +1,38 @@
+name: "Deploy para VPS"
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build_deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: "Baixar o código"
+        uses: actions/checkout@v4
+
+      - name: "Copiar arquivos para VPS"
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: "216.238.99.81"
+          username: "root"
+          password: "7h!TSco%VRVa$jWU"
+          port: "22"
+          source: "."
+          target: "/var/www/cassino"
+                   
+      - name: "Build do sistema"
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: "216.238.99.81"
+          username: "root"
+          password: "7h!TSco%VRVa$jWU"
+          port: "22"
+          script: |
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            npm --help
+            cd /var/www/cassino
+            npm install
+            npm run build
+            sudo chown -R www-data:www-data /var/www/cassino
+            sudo chmod -R 755 /var/www/cassino
