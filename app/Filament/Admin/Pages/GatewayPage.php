@@ -160,7 +160,26 @@ class GatewayPage extends Page
                             ->placeholder('Digite o client secret')
                             ->maxLength(191)
                             ->columnSpanFull(),
-                    ])
+                    ]),
+                    Section::make('Bspay/PixUp')
+                    ->description('Ajustes de credenciais para a Bspay')
+                    ->schema([
+                        TextInput::make('bspay_uri')
+                            ->label('Client URI')
+                            ->placeholder('Digite a url da api')
+                            ->maxLength(191)
+                            ->columnSpanFull(),
+                        TextInput::make('bspay_cliente_id')
+                            ->label('Client ID')
+                            ->placeholder('Digite o client ID')
+                            ->maxLength(191)
+                            ->columnSpanFull(),
+                        TextInput::make('bspay_cliente_secret')
+                            ->label('Client Secret')
+                            ->placeholder('Digite o client secret')
+                            ->maxLength(191)
+                            ->columnSpanFull(),
+                    ]),
             ])
             ->statePath('data');
     }

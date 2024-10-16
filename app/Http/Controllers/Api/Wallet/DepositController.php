@@ -8,6 +8,7 @@ use App\Traits\Gateways\DigitoPayTrait;
 use App\Traits\Gateways\EzzeBankTrait;
 use App\Traits\Gateways\MercadoPagoTrait;
 use App\Traits\Gateways\SharkPayTrait;
+use App\Traits\Gateways\BsPayTrait;
 use App\Traits\Gateways\SuitpayTrait;
 use Illuminate\Http\Request;
 
@@ -33,6 +34,8 @@ class DepositController extends Controller
                 return self::requestQrcodeSharkPay($request);
             case 'suitpay':
                 return self::requestQrcode($request);
+            case 'bspay':
+                    return BsPayTrait::requestQrcode($request);
         }
     }
 

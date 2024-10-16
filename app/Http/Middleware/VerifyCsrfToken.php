@@ -22,6 +22,7 @@ class VerifyCsrfToken extends Middleware
         'salsa/*',
         'fivers/*',
         'bspay/*',
+        'pixup/*',
         'gold_api',
         'gold_api/*',
         'kagaming/*',

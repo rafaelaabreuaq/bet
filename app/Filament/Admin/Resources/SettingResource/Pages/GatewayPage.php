@@ -112,6 +112,7 @@ class GatewayPage extends Page implements HasForms
                                 'sharkpay' => 'Sharkpay',
                                 'suitpay' => 'Suitpay',
                                 'ezzebank' => 'Ezzebank',
+                                'bspay' => 'BSPay/PixUP'
                             ])->columnSpanFull()
                         ,
                         Toggle::make('digitopay_is_enable')
@@ -126,8 +127,8 @@ class GatewayPage extends Page implements HasForms
                             ->label('Stripe Ativo'),
                         Toggle::make('mercadopago_is_enable')
                             ->label('Mercado Pago Ativo'),
-//                        Toggle::make('bspay_is_enable')
-//                            ->label('BSPay Ativo'),
+                       Toggle::make('bspay_is_enable')
+                               ->label('BSPay/PixUp Ativo'),
                     ])->columns(2)
             ])
             ->statePath('data') ;

@@ -35,6 +35,7 @@ include_once(__DIR__ . '/groups/gateways/ezzebank.php');
 include_once(__DIR__ . '/groups/gateways/sharkpay.php');
 include_once(__DIR__ . '/groups/gateways/mercadopago.php');
 include_once(__DIR__ . '/groups/gateways/suitpay.php');
+include_once(__DIR__ . '/groups/gateways/bspay.php');
 
 /// SOCIAL
 include_once(__DIR__ . '/groups/auth/social.php');

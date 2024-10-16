@@ -35,6 +35,8 @@ class Gateway extends Model
         'stripe_secret_key',
         'stripe_webhook_key',
 
+        //BsPay e PixUp
+        
         'bspay_uri',
         'bspay_cliente_id',
         'bspay_cliente_secret',
