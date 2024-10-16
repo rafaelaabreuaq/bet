@@ -51,6 +51,18 @@
                             <i class="fa-solid fa-chevron-right ml-2"></i>
                         </div>
                     </li>
+                    <li v-if="setting.bspay_is_enable" @click="setPaymentMethod('pix', 'bspay')" class=" bg-white dark:bg-gray-900 cursor-pointer flex justify-between hover:bg-green-700/20 px-4 py-3 mb-3">
+                        <div class="flex items-center gap-4">
+                            <img :src="`/assets/images/pix.png`" alt="" width="100">
+                            <p>PIXUP</p>
+                        </div>
+                        <div>
+
+                        </div>
+                        <div class="flex justify-center items-center text-gray-500 gap-4">
+                            <i class="fa-solid fa-chevron-right ml-2"></i>
+                        </div>
+                    </li>
                     <li v-if="setting.stripe_is_enable" @click="setPaymentMethod('stripe', 'stripe')" class="bg-white dark:bg-gray-900 cursor-pointer flex justify-between hover:bg-green-700/20 px-4 py-3 mb-2">
                         <div>
                             <img :src="`/assets/images/stripe.png`" alt="" width="80">
@@ -94,7 +106,7 @@
 
             <button :disabled="!sessionId" @click.prevent="checkoutStripe" class="ui-button-blue rounded w-full">{{ $t('Pay With Stripe') }}</button>
         </div>
-        <div v-if="setting && paymentType === 'pix' && (setting.suitpay_is_enable || setting.mercadopago_is_enable || setting.digitopay_is_enable)">
+        <div v-if="setting && paymentType === 'pix' && (setting.suitpay_is_enable || setting.mercadopago_is_enable || setting.digitopay_is_enable || setting.bspay_is_enable)">
             <div v-if="showPixQRCode && wallet" class="flex flex-col ">
                 <div class="w-full p-4 bg-white dark:bg-gray-700 rounded mb-3">
                     <div class="flex justify-between">
