@@ -13,9 +13,9 @@ jobs:
       - name: "Copiar arquivos para VPS"
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: "216.238.99.81"
+          host: "216.238.119.195"
           username: "root"
-          password: "7h!TSco%VRVa$jWU"
+          password: "]P3qg)tb6Q%M]SrK"
           port: "22"
           source: "."
           target: "/var/www/cassino"
@@ -23,9 +23,9 @@ jobs:
       - name: "Build do sistema"
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: "216.238.99.81"
+          host: "216.238.119.195"
           username: "root"
-          password: "7h!TSco%VRVa$jWU"
+          password: "]P3qg)tb6Q%M]SrK"
           port: "22"
           script: |
             export NVM_DIR=~/.nvm
